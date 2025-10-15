@@ -3,11 +3,9 @@ import pandas as pd
 import numpy as np
 import joblib
 import os
-
-# Must be the first Streamlit command and only once
 st.set_page_config(page_title="Titanic Survival Prediction", layout="centered")
 
-MODEL_PATH = r"C:\Users\madhukar\OneDrive\Desktop\CODSOFT\Task 1 - Titanic Survival Prediction\models\titanic_pipeline.sav"
+MODEL_PATH = r"C:\Users\pranay\OneDrive\Desktop\CODSOFT\Task 1 - Titanic Survival Prediction\models\titanic_pipeline.sav"
 
 @st.cache_resource
 def load_model():
@@ -17,12 +15,10 @@ def load_model():
     return joblib.load(MODEL_PATH)
 
 model = load_model()
-
-#  Streamlit UI 
+ 
 st.title("🚢 Titanic Survival Prediction App")
 st.markdown("### Enter passenger details below to predict if they would have survived.")
 
-#  Input form 
 with st.form("prediction_form"):
     col1, col2 = st.columns(2)
     with col1:
@@ -42,11 +38,9 @@ with st.form("prediction_form"):
 
 if submitted:
 
-    # Preprocess inputs
     FamilySize = SibSp + Parch + 1
     IsAlone_val = 1 if IsAlone == "Yes" else 0
 
-    #  Create DataFrame for model 
     input_df = pd.DataFrame([{
         "Pclass": Pclass,
         "Sex": Sex,
@@ -61,7 +55,6 @@ if submitted:
         "CabinDeck": CabinDeck
     }])
 
-    # Make prediction 
     try:
         pred = model.predict(input_df)[0]
         prob = model.predict_proba(input_df)[0][1]
@@ -71,4 +64,5 @@ if submitted:
         else:
             st.markdown("🔴 The passenger is **unlikely to survive**.")
     except Exception as e:
+
         st.error(f"Prediction error: {e}")           
