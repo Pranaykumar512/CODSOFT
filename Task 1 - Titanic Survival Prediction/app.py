@@ -5,7 +5,7 @@ import joblib
 import os
 st.set_page_config(page_title="Titanic Survival Prediction", layout="centered")
 
-MODEL_PATH = r"C:\Users\pranay\OneDrive\Desktop\CODSOFT\Task 1 - Titanic Survival Prediction\models\titanic_pipeline.sav"
+MODEL_PATH = r"C:\Users\prana\OneDrive\Desktop\CODSOFT\Task 1 - Titanic Survival Prediction\models\titanic_pipeline.sav"
 
 @st.cache_resource
 def load_model():
@@ -66,3 +66,4 @@ if submitted:
     except Exception as e:
 
         st.error(f"Prediction error: {e}")           
+
