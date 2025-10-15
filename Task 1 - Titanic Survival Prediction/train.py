@@ -11,7 +11,7 @@ from sklearn.compose import ColumnTransformer
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, roc_auc_score, classification_report
 
-DATA_PATH = r"C:\Users\pranay\OneDrive\Desktop\CODSOFT\Task 1 - Titanic Survival Prediction\data\Titanic-Dataset.csv"
+DATA_PATH = r"C:\Users\prana\OneDrive\Desktop\CODSOFT\Task 1 - Titanic Survival Prediction\data\Titanic-Dataset.csv"
 OUT_DIR = "models"
 OUT_PATH = os.path.join(OUT_DIR, "titanic_pipeline.sav")
 
@@ -110,4 +110,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
