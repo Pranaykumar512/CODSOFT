@@ -85,6 +85,9 @@ Embarked	         S
 ✅ Predicted Result: Survived
 
 🙌 Author
-Pranay Kumar 
+
+Pranay Kumar
+
 CodSoft Data Science Internship – October 2025
+
 
