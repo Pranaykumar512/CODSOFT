@@ -1,0 +1,8 @@
+pandas
+numpy
+scikit-learn
+joblib
+streamlit
+flask
+category_encoders
+tqdm
